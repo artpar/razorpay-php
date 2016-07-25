@@ -35,7 +35,7 @@ class Request
         if ($data === null)
             $data = array();
 
-        $options = array('auth'=> array(Api::$key, Api::$secret));
+        $options = array('auth'=> array(Api::$key, Api::$secret), 'verify' => false);
 
         $response = \Requests::request($url, self::$headers, $data, $method, $options);
 

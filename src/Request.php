@@ -35,7 +35,7 @@ class Request
         if ($data === null)
             $data = array();
 
-        $options = array('auth'=> array(Api::$key, Api::$secret), "verify" => env("VENDOR_HTTP_SSL_CHECK") === "false" ? false : true);
+        $options = array('auth'=> array(Api::$key, Api::$secret), "verify" => env("VENDOR_SKIP_SSL_CHECK") === true ? false : true);
 
         $response = \Requests::request($url, self::$headers, $data, $method, $options);
 
